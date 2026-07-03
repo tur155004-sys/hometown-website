@@ -28,6 +28,15 @@
     </nav>
   </header>
 
+  <aside class="page-rail" aria-label="页面快速跳转">
+    <a href="#top" data-rail-link><span>首</span><small>首页</small></a>
+    <a href="#about" data-rail-link><span>介</span><small>简介</small></a>
+    <a href="#scenery" data-rail-link><span>景</span><small>风光</small></a>
+    <a href="#landmarks" data-rail-link><span>标</span><small>地标</small></a>
+    <a href="#food" data-rail-link><span>味</span><small>美食</small></a>
+    <a href="#route" data-rail-link><span>线</span><small>路线</small></a>
+  </aside>
+
   <main>
     <section class="hero" aria-label="首页首屏">
       <!-- 可替换图片：images/hero.jpg，建议使用横向高清家乡实景大图 -->
@@ -44,6 +53,39 @@
         <span>老街</span>
         <span>集市</span>
         <span>味道</span>
+      </div>
+    </section>
+
+    <section class="jump-board" aria-label="快速探索入口">
+      <div class="section-inner jump-grid reveal">
+        <a class="jump-card" href="#scenery">
+          <span>景</span>
+          <div>
+            <strong>看实景风光</strong>
+            <small>河埠、田野、夜市灯火</small>
+          </div>
+        </a>
+        <a class="jump-card" href="#landmarks">
+          <span>标</span>
+          <div>
+            <strong>逛地标老街</strong>
+            <small>古戏台、祠堂、码头</small>
+          </div>
+        </a>
+        <a class="jump-card" href="#food">
+          <span>味</span>
+          <div>
+            <strong>尝本地味道</strong>
+            <small>汤粉、锅饼、蒸点</small>
+          </div>
+        </a>
+        <a class="jump-card" href="#route">
+          <span>线</span>
+          <div>
+            <strong>跟一日路线</strong>
+            <small>上午到晚上慢慢走</small>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -69,6 +111,10 @@
               <span>即可慢游</span>
             </div>
           </div>
+          <div class="about-actions">
+            <a class="secondary-btn" href="#scenery">先看风光</a>
+            <a class="ghost-btn" href="#route">查看一日游路线</a>
+          </div>
         </div>
         <figure class="about-photo reveal">
           <!-- 可替换图片：建议换成城市入口、河流、老街或代表性全景 -->
@@ -90,6 +136,7 @@
             <div>
               <h3>清晨河埠</h3>
               <p>石桥、乌篷船和临水人家，在晨雾里慢慢醒来。</p>
+              <a class="overlay-link" href="#route">放进路线</a>
             </div>
           </article>
           <article class="image-card reveal">
@@ -97,6 +144,7 @@
             <div>
               <h3>老街早市</h3>
               <p>青菜、蒸笼、热汤和方言，把一条街叫醒。</p>
+              <a class="overlay-link" href="#landmarks">查看地标</a>
             </div>
           </article>
           <article class="image-card reveal">
@@ -104,6 +152,7 @@
             <div>
               <h3>稻田村口</h3>
               <p>晚风掠过稻浪，田埂尽头就是白墙黛瓦的村子。</p>
+              <a class="overlay-link" href="#route">下午去这里</a>
             </div>
           </article>
           <article class="image-card wide reveal">
@@ -111,6 +160,7 @@
             <div>
               <h3>夜市灯火</h3>
               <p>灯泡、蒸汽和小桌板，让夜晚变得热腾腾。</p>
+              <a class="overlay-link" href="#food">找夜市美食</a>
             </div>
           </article>
         </div>
@@ -130,6 +180,7 @@
               <h3>溪南古戏台</h3>
               <p>木雕梁柱和旧彩绘还在，节庆时这里会重新响起锣鼓。</p>
               <span>推荐理由：最能感受本地民俗气氛</span>
+              <a class="card-link" href="#culture">看人文记忆</a>
             </div>
           </article>
           <article class="info-card reveal">
@@ -138,6 +189,7 @@
               <h3>老祠堂</h3>
               <p>木门、砖雕和天井保留着族谱、节庆和乡音。</p>
               <span>推荐理由：能看见水乡建筑细节</span>
+              <a class="card-link" href="#culture">了解民俗</a>
             </div>
           </article>
           <article class="info-card reveal">
@@ -146,6 +198,7 @@
               <h3>南埠早市</h3>
               <p>菜篮、竹筐、热豆浆和刚出锅的点心挤满街口。</p>
               <span>推荐理由：最接近本地人的日常</span>
+              <a class="card-link" href="#food">顺路吃什么</a>
             </div>
           </article>
           <article class="info-card reveal">
@@ -154,6 +207,7 @@
               <h3>临河码头</h3>
               <p>过去靠船运米运菜，如今是散步、看水和吹晚风的地方。</p>
               <span>推荐理由：傍晚灯光最有氛围</span>
+              <a class="card-link" href="#route">安排到路线</a>
             </div>
           </article>
         </div>
@@ -172,6 +226,7 @@
             <div>
               <h3>溪南汤粉</h3>
               <p>骨汤滚开后浇进大碗，撒上葱花和辣油，是早晚都想吃的一口热乎。</p>
+              <a class="card-link" href="#route">中午这样吃</a>
             </div>
           </article>
           <article class="food-card reveal">
@@ -179,6 +234,7 @@
             <div>
               <h3>葱香锅饼</h3>
               <p>铁锅边烙到焦香，撕开能看见层次，适合边逛边吃。</p>
+              <a class="card-link" href="#route">加入路线</a>
             </div>
           </article>
           <article class="food-card reveal">
@@ -186,6 +242,7 @@
             <div>
               <h3>夜市蒸点</h3>
               <p>蒸笼一层层摞在摊头，热气混着灯光，是夜里最熟悉的招呼。</p>
+              <a class="card-link" href="#route">晚上去吃</a>
             </div>
           </article>
         </div>
@@ -241,28 +298,42 @@
         <div class="route-card reveal" aria-label="一日游路线">
           <div class="route-step">
             <time>上午</time>
-            <h3>南埠早市 / 石拱桥</h3>
-            <p>从早市吃一碗汤粉，再沿石板路走到溪南石拱桥。</p>
+            <div>
+              <h3>南埠早市 / 石拱桥</h3>
+              <p>从早市吃一碗汤粉，再沿石板路走到溪南石拱桥。</p>
+              <a class="step-link" href="#landmarks">跳到地标</a>
+            </div>
           </div>
           <div class="route-step">
             <time>中午</time>
-            <h3>临河小店</h3>
-            <p>找一家靠河的老店，点葱香锅饼、时令小菜和一壶热茶。</p>
+            <div>
+              <h3>临河小店</h3>
+              <p>找一家靠河的老店，点葱香锅饼、时令小菜和一壶热茶。</p>
+              <a class="step-link" href="#food">跳到美食</a>
+            </div>
           </div>
           <div class="route-step">
             <time>下午</time>
-            <h3>田埂与村口</h3>
-            <p>去村口稻田和山脚小路，听风吹过水渠和稻浪。</p>
+            <div>
+              <h3>田埂与村口</h3>
+              <p>去村口稻田和山脚小路，听风吹过水渠和稻浪。</p>
+              <a class="step-link" href="#scenery">跳到风光</a>
+            </div>
           </div>
           <div class="route-step">
             <time>晚上</time>
-            <h3>河岸夜市</h3>
-            <p>看灯火亮起，再到夜市吃蒸点和热汤，为一天收尾。</p>
+            <div>
+              <h3>河岸夜市</h3>
+              <p>看灯火亮起，再到夜市吃蒸点和热汤，为一天收尾。</p>
+              <a class="step-link" href="#culture">跳到人文</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <a class="back-top" href="#top" aria-label="返回顶部">↑</a>
 
   <footer class="site-footer">
     <div class="footer-inner">

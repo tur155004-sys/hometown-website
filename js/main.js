@@ -2,13 +2,45 @@ const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 const revealItems = document.querySelectorAll(".reveal");
+const backTop = document.querySelector(".back-top");
+const trackedLinks = document.querySelectorAll(".nav-links a, [data-rail-link]");
+const sectionIds = ["top", "about", "scenery", "landmarks", "food", "culture", "route"];
+const sectionTargets = sectionIds
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
 
 function updateHeader() {
   header.classList.toggle("scrolled", window.scrollY > 24);
 }
 
-window.addEventListener("scroll", updateHeader, { passive: true });
+function updateActiveNavigation() {
+  const scanLine = window.scrollY + 140;
+  let currentId = "top";
+
+  sectionTargets.forEach((section) => {
+    if (scanLine >= section.offsetTop) {
+      currentId = section.id;
+    }
+  });
+
+  trackedLinks.forEach((link) => {
+    const targetId = link.getAttribute("href")?.replace("#", "");
+    link.classList.toggle("active", targetId === currentId);
+  });
+
+  if (backTop) {
+    backTop.classList.toggle("visible", window.scrollY > 520);
+  }
+}
+
+function handleScroll() {
+  updateHeader();
+  updateActiveNavigation();
+}
+
+window.addEventListener("scroll", handleScroll, { passive: true });
 updateHeader();
+updateActiveNavigation();
 
 navToggle.addEventListener("click", () => {
   const isOpen = navLinks.classList.toggle("open");

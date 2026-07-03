@@ -102,8 +102,13 @@ a {
   transition: width 0.25s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
   width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--gold);
 }
 
 .nav-toggle {
@@ -252,6 +257,57 @@ a {
   background: #e6b45a;
 }
 
+.page-rail {
+  position: fixed;
+  z-index: 45;
+  right: 18px;
+  top: 50%;
+  display: grid;
+  gap: 8px;
+  transform: translateY(-50%);
+}
+
+.page-rail a {
+  display: grid;
+  grid-template-columns: 28px auto;
+  align-items: center;
+  gap: 8px;
+  min-width: 76px;
+  padding: 7px 10px 7px 7px;
+  border: 1px solid rgba(255, 250, 241, 0.35);
+  border-radius: 999px;
+  background: rgba(37, 60, 43, 0.76);
+  color: #fffaf1;
+  box-shadow: 0 10px 24px rgba(37, 60, 43, 0.16);
+  backdrop-filter: blur(12px);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.page-rail a:hover,
+.page-rail a.active {
+  transform: translateX(-4px);
+  border-color: rgba(215, 162, 71, 0.9);
+  background: rgba(255, 250, 241, 0.95);
+  color: var(--green-dark);
+}
+
+.page-rail span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #211b12;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.page-rail small {
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .hero-note {
   position: absolute;
   z-index: 3;
@@ -280,6 +336,66 @@ a {
   backdrop-filter: blur(10px);
   color: rgba(255, 255, 255, 0.9);
   font-size: 14px;
+}
+
+.jump-board {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #fffaf1, var(--bg));
+}
+
+.jump-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.jump-card {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  align-items: center;
+  min-height: 96px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.56);
+  box-shadow: 0 12px 28px rgba(44, 35, 24, 0.08);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.jump-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(215, 162, 71, 0.7);
+  background: #fffaf1;
+  box-shadow: var(--shadow);
+}
+
+.jump-card > span {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--green-dark);
+  color: #fffaf1;
+  font-weight: 900;
+}
+
+.jump-card strong,
+.jump-card small {
+  display: block;
+}
+
+.jump-card strong {
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.jump-card small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .section {
@@ -359,6 +475,47 @@ p {
 .stats span {
   color: var(--muted);
   font-size: 14px;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.secondary-btn,
+.ghost-btn,
+.card-link,
+.overlay-link,
+.step-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 800;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.secondary-btn {
+  background: var(--green-dark);
+  color: #fffaf1;
+}
+
+.ghost-btn {
+  border: 1px solid var(--line);
+  color: var(--green-dark);
+}
+
+.secondary-btn:hover,
+.ghost-btn:hover,
+.card-link:hover,
+.overlay-link:hover,
+.step-link:hover {
+  transform: translateY(-2px);
 }
 
 .about-photo {
@@ -456,6 +613,20 @@ p {
   color: rgba(255, 255, 255, 0.82);
 }
 
+.overlay-link {
+  margin-top: 12px;
+  min-height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+.overlay-link:hover {
+  background: rgba(215, 162, 71, 0.9);
+  color: #211b12;
+}
+
 .landmarks,
 .culture {
   background: var(--paper);
@@ -489,6 +660,19 @@ p {
   font-size: 14px;
 }
 
+.card-link {
+  margin-top: 16px;
+  border: 1px solid rgba(73, 107, 74, 0.18);
+  background: rgba(73, 107, 74, 0.08);
+  color: var(--green-dark);
+}
+
+.card-link:hover {
+  border-color: rgba(73, 107, 74, 0.35);
+  background: var(--green-dark);
+  color: #fffaf1;
+}
+
 .food {
   background:
     radial-gradient(circle at top left, rgba(215, 162, 71, 0.2), transparent 36%),
@@ -518,6 +702,10 @@ p {
 
 .food-card p {
   color: var(--muted);
+}
+
+.food-card .card-link {
+  margin-top: 18px;
 }
 
 .timeline {
@@ -616,6 +804,49 @@ p {
   color: var(--muted);
 }
 
+.step-link {
+  margin-top: 12px;
+  min-height: 34px;
+  border: 1px solid rgba(184, 104, 58, 0.24);
+  background: rgba(184, 104, 58, 0.08);
+  color: var(--clay);
+}
+
+.step-link:hover {
+  background: var(--clay);
+  color: #fffaf1;
+}
+
+.back-top {
+  position: fixed;
+  z-index: 55;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--green-dark);
+  color: #fffaf1;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.back-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-top:hover {
+  background: var(--gold);
+  color: #211b12;
+}
+
 .site-footer {
   background: #211b12;
   color: #fffaf1;
@@ -676,6 +907,14 @@ p {
 }
 
 @media (max-width: 1024px) {
+  .page-rail {
+    display: none;
+  }
+
+  .jump-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -752,6 +991,11 @@ p {
     background: rgba(73, 107, 74, 0.08);
   }
 
+  .nav-links a.active {
+    background: rgba(215, 162, 71, 0.16);
+    color: var(--green-dark);
+  }
+
   .nav-links a::after {
     display: none;
   }
@@ -812,9 +1056,19 @@ p {
   }
 
   .stats,
+  .jump-grid,
   .card-grid,
   .scenery-grid {
     grid-template-columns: 1fr;
+  }
+
+  .jump-card {
+    min-height: 84px;
+    padding: 14px;
+  }
+
+  .about-actions {
+    display: grid;
   }
 
   .scenery-grid {
