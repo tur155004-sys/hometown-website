@@ -13,6 +13,7 @@ hometown-website/
 │   └── main.js
 ├── images/
 │   ├── hero.jpg
+│   ├── about.jpg
 │   ├── scenery1.jpg
 │   ├── scenery2.jpg
 │   ├── food1.jpg
@@ -71,7 +72,8 @@ https://你的GitHub用户名.github.io/hometown-website/
 把真实图片放进 `images` 文件夹，并使用下面的文件名覆盖占位文件：
 
 - `hero.jpg`：首页大图，建议横向高清照片
-- `scenery1.jpg`：家乡简介和风景图
+- `about.jpg`：家乡简介配图，建议使用生活化实景
+- `scenery1.jpg`：实景风光主图
 - `scenery2.jpg`：城市街景
 - `scenery3.jpg`：乡村田野
 - `scenery4.jpg`：夜景
